@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+    font-size: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+section, footer {
+    margin: 0 auto;
+    padding: 100px 0;
+}
+header {
+    position: fixed;
+    background-color: black;
+    color: white;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 0;
+    font-size: 2rem;
+}
+
+.hero {
+    background-color: gray;
+    padding: 200px 0;
+}
+
+.cta {
+    background-color: lightgray;
+}
+
+.values {
+    background-color: rgb(105, 105, 105);
+}
+
+.projects {
+    background-color: lightgray;
+}
+
+.articles {
+    background-color: gray;
+}
+
+footer {
+    padding: 40px 0;
+}
