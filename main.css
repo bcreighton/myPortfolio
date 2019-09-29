@@ -1,4 +1,4 @@
-* {
+ * {
     box-sizing: border-box;
     font-size: 2rem;
     text-align: center;
@@ -17,6 +17,7 @@ header {
     margin: 0 auto;
     padding: 20px 0;
     font-size: 2rem;
+    z-index: 999;
 }
 
 .hero {
@@ -33,7 +34,40 @@ header {
 }
 
 .projects {
+    width: 100%;
+    padding: 0;
+}
+
+.projectContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
     background-color: lightgray;
+    padding: 5%;
+}
+
+.project {
+    position: relative;
+    margin: 10px;
+    min-width: 150px;
+    max-width: 250px;
+    flex: 1 1 auto;
+    background-color: darkgray;
+}
+
+.project:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+
+.project .content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 75px 5px;
 }
 
 .articles {
