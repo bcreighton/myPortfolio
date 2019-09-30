@@ -23,14 +23,21 @@ header {
 .hero {
     background-color: gray;
     padding: 200px 0;
+    height: 100vh;
 }
 
 .cta {
     background-color: lightgray;
+    height: 100px;
 }
 
 .values {
     background-color: rgb(105, 105, 105);
+    height: 100vh;
+}
+
+.value {
+    display: none;
 }
 
 .projects {
@@ -70,10 +77,85 @@ header {
     padding: 75px 5px;
 }
 
+.project.placeholder {
+    display: none;
+}
+
 .articles {
     background-color: gray;
+    height: 100vh;
 }
 
 footer {
     padding: 40px 0;
+}
+
+@media screen and (min-width: 565px) {
+    .project {
+        min-width: 200px;
+        max-width: 300px;
+    }
+}
+
+@media screen and (min-width: 735px) {
+    .values {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .values p {
+        display: none;
+    }
+    
+    .value {
+        display: block;
+        position: relative;
+        margin: 0 10px;
+        min-width: 150px;
+        max-width: 350px;
+        flex: 1 1 auto;
+        background-color: lightgray;
+    }
+
+    .value:after {
+        content: "";
+        display: block;
+        padding-bottom: 150%;
+    }
+
+    .value .content {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        padding: 100px 5px;
+    }
+    
+    .project.placeholder {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 975px) {
+    .value {
+        margin: 0 20px;
+    }
+    
+    .project {
+        min-width: 250px;
+        max-width: 400px;
+        margin: 20px;
+    }
+}
+
+@media screen and (min-width: 1285px) {
+    .value {
+        margin: 0 30px;
+    }
+    
+    .project {
+        min-width: 300px;
+        max-width: 400px;
+        margin: 30px;
+    }
 }
