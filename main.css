@@ -28,7 +28,8 @@ header {
 
 .cta {
     background-color: lightgray;
-    height: 100px;
+    height: 50px;
+    padding: 15px 0;
 }
 
 .values {
@@ -102,6 +103,7 @@ footer {
         display: flex;
         flex-direction: row;
         justify-content: center;
+        height: 75vh;
     }
 
     .values p {
@@ -137,6 +139,10 @@ footer {
 }
 
 @media screen and (min-width: 975px) {
+    .values {
+        height: 100vh;
+    }
+    
     .value {
         margin: 0 20px;
     }
