@@ -5,6 +5,42 @@
     text-transform: uppercase;
 }
 
+/* ---------------------- FONT FAMILIES ------------------*/
+h1, h2 {
+    font-family: 'Domine', serif;
+}
+
+h3, h4, h5, h6, p {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+button {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* --------------------- COLOR SCHEME ----------------------
+HSL 
+MAIN COLOR / BACKGROUND COLOR FONT
+    SMOKY BLACK: 
+        hsla(345%, 50%, 3%, 1)
+        rgba(12, 4, 6, 1)
+
+BACKGROUND COLOR / MAIN COLOR FONT
+    WHITE SMOKE: 
+        hsla(0%, 0%, 97%, 1)
+        rgba(247, 247, 247, 1)
+
+ACCENT 1
+    SUNSET ORANGE: 
+        hsla(4%, 99%, 66%, 1)
+        rgba(254, 95, 85, 1)
+
+OPTIONAL ACCENT
+    DARK VANILLA: 
+        hsla(41%, 36%, 75%, 1)
+        rgba(215, 201, 170, 1)
+----------------------------------------------------------*/
+
 section, footer {
     margin: 0 auto;
     padding: 100px 0;
@@ -91,6 +127,20 @@ footer {
     padding: 40px 0;
 }
 
+@media screen and (min-width: 320px) {
+    .hero {
+        height: 50vh;
+    }
+
+    .values {
+        height: 50vh;
+    }
+
+    .articles {
+        height: 50vh;
+    }
+}
+
 @media screen and (min-width: 565px) {
     .project {
         min-width: 200px;
@@ -162,6 +212,18 @@ footer {
     .project {
         min-width: 300px;
         max-width: 400px;
+        margin: 25px;
+    }
+}
+
+@media screen and (min-width: 1550px) {
+    .value {
+        margin: 0 50px;
+    }
+    
+    .project {
+        min-width: 400px;
+        max-width: 550px;
         margin: 30px;
     }
 }
