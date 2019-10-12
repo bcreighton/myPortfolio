@@ -169,11 +169,11 @@ header {
     padding-bottom: 40px;
 }
 
-.content p {
+/* .content p {
     font-size: 1.5rem;
     line-height: 2.25rem;
     padding: 0 10px;
-}
+} */
 
 .people {
     display: block;
@@ -199,17 +199,16 @@ header {
     flex-direction: row;
     justify-content: center;
     margin: 0 auto;
-    background-color: lightgray;
     padding: 5%;
 }
 
 .project {
     position: relative;
     margin: 10px;
-    min-width: 150px;
+    min-width: 200px;
     max-width: 250px;
     flex: 1 1 auto;
-    background-color: darkgray;
+    background-color: rgba(215, 201, 170, 1);
 }
 
 .project:after {
@@ -219,14 +218,21 @@ header {
 }
 
 .project .content {
+    display: none;
     position: absolute;
     width: 100%;
     height: 100%;
-    padding: 75px 5px;
+    padding: 40px 5px;
 }
 
 .project.placeholder {
     display: none;
+}
+
+.projectDescription {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    padding: 20px 30px;
 }
 
 .articles {
@@ -266,9 +272,13 @@ footer {
         min-width: 200px;
         max-width: 300px;
     }
+
+    .project .content {
+        padding: 50px 5px;
+    }
 }
 
-@media screen and (min-width: 735px) {
+@media screen and (min-width: 734px) {
     .hero {
         height: 100vh;
         padding: 250px 0;
@@ -336,17 +346,26 @@ footer {
         color: white;
     }
 
-    .content p {
+    /* .content p {
         font-size: 1.5rem;
         line-height: 2.25rem;
-    }
+    } */
     
     .project.placeholder {
         display: block;
     }
+
+    .projectTitle {
+        font-size: 2rem;
+    }
+
+    .projectDescription {
+        font-size: 1rem;
+        line-height: 1.1rem;
+    }
 }
 
-@media screen and (min-width: 975px) {
+@media screen and (min-width: 985px) {
     .headline .flexSpacer {
         display: block;
     }
@@ -368,6 +387,15 @@ footer {
         max-width: 400px;
         margin: 20px;
     }
+
+    .projectTitle {
+        font-size: 2.5rem;
+    }
+
+    .projectDescription {
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+    }
 }
 
 @media screen and (min-width: 1285px) {
@@ -380,16 +408,28 @@ footer {
         max-width: 400px;
         margin: 25px;
     }
+
+    .project .content {
+        padding: 100px 25px;
+    }
 }
 
-@media screen and (min-width: 1550px) {
+@media screen and (min-width: 1551px) {
     .value {
         margin: 0 50px;
     }
     
     .project {
-        min-width: 400px;
-        max-width: 550px;
+        min-width: 325px;
+        max-width: 450px;
         margin: 30px;
+    }
+
+    .projectContainer {
+        padding: 5% 10%;
+    }
+
+    .project .content {
+        padding: 125px 25px;
     }
 }
