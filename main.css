@@ -209,6 +209,9 @@ header {
     max-width: 250px;
     flex: 1 1 auto;
     background-color: rgba(215, 201, 170, 1);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 .project:after {
@@ -223,6 +226,12 @@ header {
     width: 100%;
     height: 100%;
     padding: 40px 5px;
+}
+
+.projectTint {
+    display: none;
+    width: 100%;
+    height: 100%;
 }
 
 .project.placeholder {

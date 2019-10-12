@@ -4,12 +4,12 @@ const projects = [
     {
         id: 'CUID',
         title: 'Sports Quiz',
-        image: 'images\sportsQuiz.jpg',
+        image: 'images/sportsQuiz.jpg',
         description: 'The Sports Trivia Game is an application that tests your sports knowledge with random sports questions from different types of sports. Are you one of the GOATs or is your sports knowledge mediocre?',
         tech: 'HTML, CSS, JQuery',
         link: 'https://bcreighton.github.io/sportsTriviaGame/',
         repo: 'https://github.com/bcreighton/sportsTriviaGame',
-        hoverColor: 'red'
+        hoverColor: 'rgba(255, 0, 0, 0.5)'
     },
     {
         id: 'CUID',
@@ -19,7 +19,7 @@ const projects = [
         tech: 'HTML, CSS, JQuery',
         link: 'http',
         repo: 'http',
-        hoverColor: 'yellow'
+        hoverColor: 'rgba(255, 255, 0, 0.5)'
     },
     {
         id: 'CUID',
@@ -29,7 +29,7 @@ const projects = [
         tech: 'HTML, CSS, JQuery',
         link: 'http',
         repo: 'http',
-        hoverColor: 'green'
+        hoverColor: 'rgba(0, 128, 0, 0.5)'
     },
     {
         id: 'CUID',
@@ -39,7 +39,7 @@ const projects = [
         tech: 'HTML, CSS, JQuery',
         link: 'http',
         repo: 'http',
-        hoverColor: 'purple'
+        hoverColor: 'rgba(128, 0, 128, 0.5)'
     },
     {
         id: 'CUID',
@@ -49,7 +49,7 @@ const projects = [
         tech: 'HTML, CSS, JQuery',
         link: 'http',
         repo: 'http',
-        hoverColor: 'pink'
+        hoverColor: 'rgba(255, 192, 203, 0.5)'
     },
     {
         id: 'CUID',
@@ -59,7 +59,7 @@ const projects = [
         tech: 'HTML, CSS, JQuery',
         link: 'http',
         repo: 'http',
-        hoverColor: 'blue'
+        hoverColor: 'rgba(0, 0, 255, 0.5)'
     }
 ]
 
@@ -84,9 +84,11 @@ function generateProjects(projects) {
     for (let i = 0; i < projects.length; i++) {
         $('.projectContainer').append(`
             <div class="project">
-            <div class="content">
-                <h3 class = 'projectTitle'>${projects[i]['title']}</h3>
-                <p class = 'projectDescription'>${projects[i]['description']}</p>
+            <div class="projectTint">
+                <div class='content'>
+                    <h3 class = 'projectTitle'>${projects[i]['title']}</h3>
+                    <p class = 'projectDescription'>${projects[i]['description']}</p>
+                </div>
             </div>
             `);
     }
@@ -98,17 +100,26 @@ function handleProjectHover() {
 
         let projTitle;
         let bgColor;
+        let bgImage;
 
         if(e.type == 'mouseover') {
             projTitle = $(this).find('.projectTitle').text();
+            $(this).find('.projectTint').css('display', 'block');
             $(this).find('.content').css('display', 'block');
             bgColor = $.grep(projects, function(proj){
                     return proj.title === projTitle;
                     })
                     [0]['hoverColor'];
-            $(this).css('background-color', bgColor);
+            bgImage = $.grep(projects, function(proj){
+                return proj.title === projTitle;
+                })
+                [0]['image'];
+            $(this).css('background-image',`url('${bgImage}')`);
+            $(this).find('.projectTint').css('background-color', bgColor);
             $('body').css('background-color', bgColor);
         } else if(e.type == 'mouseout') {
+            $(this).css('background-image','none');
+            $(this).find('.projectTint').css('display', 'none');
             $(this).find('.content').css('display', 'none');
             $(this).css('background-color', 'rgba(215, 201, 170, 1)');
             $('body').css('background-color', 'rgba(247, 247, 247, 1)');
