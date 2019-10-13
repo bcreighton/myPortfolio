@@ -48,23 +48,19 @@ button {
 HSL 
 MAIN COLOR / BACKGROUND COLOR FONT
     SMOKY BLACK: 
-        hsla(345%, 50%, 3%, 1)
         rgba(12, 4, 6, 1)
 
 BACKGROUND COLOR / MAIN COLOR FONT
-    WHITE SMOKE: 
-        hsla(0%, 0%, 97%, 1)
+    WHITE SMOKE:
         rgba(247, 247, 247, 1)
 
 ACCENT 1
     SUNSET ORANGE: 
-        hsla(4%, 99%, 66%, 1)
         rgba(254, 95, 85, 1)
 
 OPTIONAL ACCENT
-    DARK VANILLA: 
-        hsla(41%, 36%, 75%, 1)
-        rgba(215, 201, 170, 1)
+    PLATINUM: 
+        rgba(226, 226, 226, 1)
 ----------------------------------------------------------*/
 
 nav {
@@ -208,7 +204,7 @@ header {
     min-width: 200px;
     max-width: 250px;
     flex: 1 1 auto;
-    background-color: rgba(215, 201, 170, 1);
+    background-color: rgba(226, 226, 226, 1);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -242,6 +238,46 @@ header {
     font-size: 1rem;
     line-height: 1.25rem;
     padding: 20px 30px;
+}
+
+.moreText {
+    display: none;
+}
+
+.readMore, .readLess {
+    background-color: rgba(0,0,0,0);
+    border: none;
+    text-decoration: underline;
+    font-weight: bold;
+}
+.readMore {
+    display: inline;
+}
+
+.readLess {
+    display: none;
+}
+
+.dots {
+    display: inline;
+}
+
+.techUsed {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.projectLinks {
+    padding: 15px 0px;
+}
+
+.projectLinks a {
+    font-size: 1.75rem;
+    margin: 0 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.25);
 }
 
 .articles {
