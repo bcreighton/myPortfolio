@@ -63,6 +63,27 @@ const projects = [
     }
 ]
 
+const values = [
+    {
+        slide: 1,
+        title: 'people',
+        content: 'People, meaning users, guide the path of design and development. Conversing and working along side people sets the foundation for an efficent process and more substantial profits.',
+        image: 'images/people1.jpg'
+    },
+    {
+        slide: 2,
+        title: 'process',
+        content: 'I truly enjoy the process of development; without it there is no outcome. An agile approach allows for constant development and small iterative successes leading to project success and sustainable profits.',
+        image: 'images/process.jpg'
+    },
+    {
+        slide: 2,
+        title: 'profit',
+        content: 'I believe profit is the result of a people driven process that\'s successfully deployed and constantly improved. Without sustainable profits there is no need for development.',
+        image: 'images/profit.jpg'
+    }
+]
+
 
 /* Functionality
 
@@ -80,18 +101,87 @@ function handleNavClicks() {
     console.log('listening for nav clicks');
 }
 
+function generateValues(values) {
+    for (let i = 0; i < values.length; i++) {
+        $('.values').append(`
+        <div class="value fade ${values[i]['title']}">
+            <div class="content">
+                <h2>${values[i]['title']}</h2>
+                <p>${values[i]['content']}</p>
+            </div>
+        </div>
+        `)
+    }
+}
+
+let valueIndex = 1;
+let winWidth = 0;
+
+function windowSizeListener() {
+    $(window).resize(function() {
+        winWidth = $(window).width();
+
+        if (winWidth < 735) {
+            $('.arrow').css('display', 'block');
+        } else {
+            $('.arrow').css('display','none');
+        }
+    });
+}
+
+function generateValueSlideshowButtons() {
+        $('.values').append(
+            `<a class="arrow prev">&#10094;</a>
+            <a class="arrow next">&#10095;</a>`
+        )
+}
+
+function nextValue(n) {
+    valueSlideshow(valueIndex += n);
+}
+
+function valueSlideshow(n) {
+    let i;
+    const valueGroup = document.getElementsByClassName('value');
+
+    if (n > valueGroup.length) {
+        valueIndex = 1;
+    }
+
+    if (n < 1) {
+        valueIndex = valueGroup.length;
+    }
+
+    for (i = 0; i < valueGroup.length; i++) {
+        $(valueGroup[i]).css('display', 'none');
+    }
+
+    $(valueGroup[valueIndex - 1]).css('display', 'block');
+}
+
+function handleSlideshowClicks() {
+    $('.values').on('click', '.arrow', function() {
+        if ($(this).hasClass('prev') === true) {
+            nextValue(-1);
+        } else {
+            nextValue(1);
+        }
+    });
+}
+
 function generateProjects(projects) {
     for (let i = 0; i < projects.length; i++) {
         $('.projectContainer').append(`
             <div class="project">
-            <div class="projectTint">
-                <div class='content'>
+                <div class="projectTint">
+                    <div class='content'>
                     <h3 class = 'projectTitle'>${projects[i]['title']}</h3>
                     <p class = 'projectDescription'>${projects[i]['description']}</p>
                     <p class = 'techUsed'>${projects[i]['tech']}</p>
-                    <div class = 'projectLinks'>
-                        <a class = 'live' href='${projects[i]["link"]}'>Live</a>
-                        <a class = 'repo' href='${projects[i]["repo"]}'>Repo</a>
+                        <div class = 'projectLinks'>
+                            <a class = 'live' href='${projects[i]["link"]}'>Live</a>
+                            <a class = 'repo' href='${projects[i]["repo"]}'>Repo</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -132,14 +222,6 @@ function handleProjectHover() {
             $('body').css('background-color', 'rgba(247, 247, 247, 1)');
         }
     });
-}
-
-function handleSlideshowClicks() {
-    console.log('listening for slideshow clicks');
-}
-
-function valueSlideshow() {
-    console.log('slideshow is running');
 }
 
 function handleReadMoreClicks() {
@@ -202,15 +284,15 @@ function handleReadLessClicks() {
 
 
 function portfolioListener() {
+    windowSizeListener();
     generateProjects(projects);
+    generateValues(values);
+    generateValueSlideshowButtons();
     handleNavClicks();
     handleProjectHover();
-    handleSlideshowClicks();
     handleReadMoreClicks();
     handleReadLessClicks();
-    
-    /*Non listener*/
-    valueSlideshow();
+    handleSlideshowClicks();
 }
 
 /*callback function*/

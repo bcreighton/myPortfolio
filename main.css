@@ -125,13 +125,13 @@ header {
     margin: 40px auto;
 }
 
- .navItem .cta {
-     height: 30px;
-     padding: 2px 5px;
-     border: 1px solid white;
-     border-radius: 5px;
-     font-size: 1rem;
- }
+.navItem .cta {
+    height: 30px;
+    padding: 2px 5px;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-size: 1rem;
+}
 
 .cta {
     border: 2px solid white;
@@ -145,6 +145,7 @@ header {
 }
 
 .values {
+    position: relative;
     padding: 0;
 }
 
@@ -161,15 +162,18 @@ header {
     padding: 40px 20px;
 }
 
-.content h2 {
+.value .content h2 {
     padding-bottom: 40px;
 }
 
-/* .content p {
-    font-size: 1.5rem;
-    line-height: 2.25rem;
-    padding: 0 10px;
-} */
+.value .content h2::first-letter {
+    text-transform: uppercase;
+} 
+
+.value .content p {
+    font-size: 1.75rem;
+    line-height: 2.5rem;
+} 
 
 .people {
     display: block;
@@ -182,6 +186,57 @@ header {
 
 .profit {
     background-image: url('images/profit.jpg');
+}
+
+/* -------- VALUE SLIDESHOW -------- */
+/* .value {
+    display: none;
+} */
+  
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(254, 95, 85, .25);
+}
+
+/* ------- SLIDESHOW ANIMATION -------- */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
 }
 
 .projects {
@@ -381,7 +436,7 @@ footer {
         position: absolute;
         width: 100%;
         height: 100%;
-        padding: 30px 0;
+        padding: 30px 15px;
         color: white;
     }
 
@@ -426,6 +481,10 @@ footer {
     .value {
         margin: 0 20px;
     }
+
+    .value .content {
+        padding: 30px;
+    }
     
     .project {
         min-width: 250px;
@@ -446,6 +505,11 @@ footer {
 @media screen and (min-width: 1285px) {
     .value {
         margin: 0 30px;
+    }
+
+    .value .content p {
+        font-size: 2rem;
+        line-height: 2.75rem;
     }
     
     .project {
