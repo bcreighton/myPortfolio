@@ -99,6 +99,21 @@ color will become the background of the website. */
 
 function handleNavClicks() {
     console.log('listening for nav clicks');
+    $('.mobileNavButton').click( function() {
+        if($('.mobileMenuSpan').css('display') === 'block') {
+            $('.mobileMenuSpan').css('display', 'none');
+            $('.mobileNavClose').css('display', 'block');
+            $('.mobileNav').animate({
+                height: 'toggle'
+            }).css('display', 'block');
+        } else {
+            $('.mobileMenuSpan').css('display', 'block');
+            $('.mobileNavClose').css('display', 'none');
+            $('.mobileNav').animate({
+                height: 'toggle'
+            }).css('display', 'none');
+        }
+    })
 }
 
 function generateValues(values) {
