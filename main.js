@@ -115,18 +115,13 @@ function generateValues(values) {
 }
 
 let valueIndex = 1;
-let winWidth = 0;
+let winWidth = $(window).width();
 
 function windowSizeListener() {
     $(window).resize(function() {
         winWidth = $(window).width();
-
-        if (winWidth < 735) {
-            $('.arrow').css('display', 'block');
-        } else {
-            $('.arrow').css('display','none');
-        }
     });
+    return winWidth;
 }
 
 function generateValueSlideshowButtons() {
@@ -134,6 +129,14 @@ function generateValueSlideshowButtons() {
             `<a class="arrow prev">&#10094;</a>
             <a class="arrow next">&#10095;</a>`
         )
+}
+
+function slideShowButtonDisplay() {
+    if (windowSizeListener() < 735) {
+        $('.arrow').css('display', 'block');
+    } else {
+        $('.arrow').css('display','none');
+    }
 }
 
 function nextValue(n) {
