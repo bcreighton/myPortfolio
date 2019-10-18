@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: rgba(247, 247, 247, 1);
+    background-color: rgba(12, 4, 6, 1);
 }
 
 /* ---------------------- FONT SIZES & FAMILIES ------------------*/
@@ -184,7 +184,11 @@ header a:visited, header a:hover, header a:active {
 }
 
 main {
-    min-height: 100vh;
+    background-color: rgba(12, 4, 6, 1);
+}
+
+.bgContainer {
+    background-color: rgba(247, 247, 247, 1);
 }
 
 header {
@@ -614,6 +618,31 @@ footer .copyright {
     color: rgba(247, 247, 247, 1);
     text-transform: uppercase;
     padding: 20px;
+}
+
+.formPopupContainer {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    /* background-color: red; */
+    z-index: 1000;
+}
+
+.formPopup {
+    position: fixed;
+    width: 30vw;
+    height: 60vh;
+    background-color: black;
+    top: 50%;
+    left: 50%;
+    margin-top: -30vh;
+    margin-left: -15vw;
+}
+
+label {
+    color: white;
 }
 
 @media screen and (min-width: 320px) {
