@@ -9,7 +9,7 @@ const projects = [
         tech: 'HTML, CSS, JQuery',
         link: 'https://bcreighton.github.io/sportsTriviaGame/',
         repo: 'https://github.com/bcreighton/sportsTriviaGame',
-        hoverColor: 'rgba(255, 0, 0, 0.5)'
+        hoverColor: 'rgba(250, 167, 111, 0.5)'
     },
     {
         id: 'CUID',
@@ -19,7 +19,7 @@ const projects = [
         tech: 'HTML, CSS, JQuery',
         link: 'http',
         repo: 'http',
-        hoverColor: 'rgba(255, 255, 0, 0.5)'
+        hoverColor: 'rgba(255, 252, 97, 0.5)'
     },
     {
         id: 'CUID',
@@ -29,7 +29,7 @@ const projects = [
         tech: 'HTML, CSS, JQuery',
         link: 'http',
         repo: 'http',
-        hoverColor: 'rgba(0, 128, 0, 0.5)'
+        hoverColor: 'rgba(92, 255, 214, 0.5)'
     },
     {
         id: 'CUID',
@@ -39,7 +39,7 @@ const projects = [
         tech: 'HTML, CSS, JQuery',
         link: 'http',
         repo: 'http',
-        hoverColor: 'rgba(128, 0, 128, 0.5)'
+        hoverColor: 'rgba(177, 117, 255, 0.5)'
     },
     {
         id: 'CUID',
@@ -59,7 +59,7 @@ const projects = [
         tech: 'HTML, CSS, JQuery',
         link: 'http',
         repo: 'http',
-        hoverColor: 'rgba(0, 0, 255, 0.5)'
+        hoverColor: 'rgba(93, 144, 255, 0.5)'
     }
 ]
 
@@ -119,7 +119,18 @@ function handleNavClicks() {
 function generateValues(values) {
     for (let i = 0; i < values.length; i++) {
         $('.values').append(`
-        <div class="value fade ${values[i]['title']}">
+        <div class="value ${values[i]['title']}">
+            <div class="content">
+                <h2>${values[i]['title']}</h2>
+                <p>${values[i]['content']}</p>
+            </div>
+        </div>
+        `)
+    }
+
+    for (let i = 0; i < values.length; i++) {
+        $('.mobileValues').append(`
+        <div class="mobileValue fade ${values[i]['title']}">
             <div class="content">
                 <h2>${values[i]['title']}</h2>
                 <p>${values[i]['content']}</p>
@@ -140,7 +151,7 @@ function windowSizeListener() {
 }
 
 function generateValueSlideshowButtons() {
-        $('.values').append(
+        $('.mobileValues').append(
             `<a class="arrow prev">&#10094;</a>
             <a class="arrow next">&#10095;</a>`
         )
@@ -160,7 +171,7 @@ function nextValue(n) {
 
 function valueSlideshow(n) {
     let i;
-    const valueGroup = document.getElementsByClassName('value');
+    const valueGroup = document.getElementsByClassName('mobileValue');
 
     if (n > valueGroup.length) {
         valueIndex = 1;
@@ -178,7 +189,7 @@ function valueSlideshow(n) {
 }
 
 function handleSlideshowClicks() {
-    $('.values').on('click', '.arrow', function() {
+    $('.mobileValues').on('click', '.arrow', function() {
         if ($(this).hasClass('prev') === true) {
             nextValue(-1);
         } else {
@@ -299,6 +310,18 @@ function handleReadLessClicks() {
     });
 }
 
+function handleContactClicks() {
+    $('.cta').click( function() {
+        $('.formPopupContainer').css('display', 'block');
+    });
+}
+
+function handleFormCloseClick() {
+    $('.formClose').click(function() {
+        $('.formPopupContainer').css('display', 'none');
+    })
+}
+
 
 
 function portfolioListener() {
@@ -311,6 +334,8 @@ function portfolioListener() {
     handleReadMoreClicks();
     handleReadLessClicks();
     handleSlideshowClicks();
+    handleContactClicks();
+    handleFormCloseClick();
 }
 
 /*callback function*/

@@ -12,6 +12,7 @@ h1 {
     font-size: 3.5rem;
 }
 
+
 h2 {
     font-size: 3rem;
 }
@@ -32,16 +33,15 @@ h6 {
     font-size: 1.5rem;
 }
 
-h1, h2 {
+h1, h2, h3, h4, h5, h6 {
     font-family: 'Domine', serif;
 }
 
-h3, h4, h5, h6, p {
+p, button {
     font-family: 'Nunito Sans', sans-serif;
 }
 
 button {
-    font-family: 'Montserrat', sans-serif;
     cursor: pointer;
 }
 
@@ -204,7 +204,7 @@ header {
 
 .hero {
     background-color: rgba(12, 4, 6, 1);
-    background-image: url('images/codeBG.jpg');
+    background-image: url('images/codeBG-S.jpg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -244,7 +244,7 @@ section, footer {
 }
 
 section.content {
-    background-color: rgba(12, 4, 6, 1);
+    /* background-color: rgba(12, 4, 6, 1); */
     width: 100%;
     min-height: 80vh;
     padding: 100px 30px 25px;
@@ -274,12 +274,20 @@ section.content p:first-of-type::first-letter {
     font-weight: bold;
 }
 
-.values {
+.values, .mobileValues {
     position: relative;
     padding: 0;
 }
 
-.value {
+.values {
+    display: none;
+}
+
+.mobileValues {
+    display: block;
+}
+
+.value, .mobileValue {
     display: none;
     background-size: cover;
     background-position: center center;
@@ -287,35 +295,35 @@ section.content p:first-of-type::first-letter {
     color: rgba(247, 247, 247, 1);
 }
 
-.value .content {
+.value .content, .mobileValue .content {
     background-color: rgba(12, 4, 6, .4);
     padding: 40px 20px;
 }
 
-.value .content h2 {
+.value .content h2, .mobileValue .content h2 {
     padding-bottom: 40px;
 }
 
-.value .content h2::first-letter {
+.value .content h2::first-letter, .mobileValue .content h2::first-letter {
     text-transform: uppercase;
 } 
 
-.value .content p {
+.value .content p, .mobileValue .content p {
     font-size: 1.75rem;
     line-height: 2.5rem;
 } 
 
 .people {
     display: block;
-    background-image: url('images/people1.jpg');
+    background-image: url('images/people1-M.jpg');
 }
 
 .process {
-    background-image: url('images/process.jpg');
+    background-image: url('images/process-M.jpg');
 }
 
 .profit {
-    background-image: url('images/profit.jpg');
+    background-image: url('images/profit-M.jpg');
 }
 
 /* -------- VALUE SLIDESHOW -------- */
@@ -621,6 +629,7 @@ footer .copyright {
 }
 
 .formPopupContainer {
+    display: none;
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -642,7 +651,7 @@ footer .copyright {
 }
 
 .formPopup form {
-    padding: 10px;
+    padding: 25px 10px;
 }
 
 .formPopup form .formField {
@@ -673,20 +682,19 @@ footer .copyright {
 }
 
 .formClose {
-    display: none;
     position: absolute;
-    right: 2px;
-    top: 2px;
-    width: 32px;
-    height: 32px;
+    right: 10px;
+    top: 10px;
+    width: 26px;
+    height: 26px;
 }
 
 .formClose:before, .formClose:after {
     position: absolute;
     left: 15px;
     content: ' ';
-    height: 33px;
-    width: 5px;
+    height: 26px;
+    width: 3px;
     background-color: rgb(255, 80, 80);
     border-radius: 2px;
 }
@@ -697,6 +705,23 @@ footer .copyright {
 
 .formClose:after {
     transform: rotate(-45deg);
+}
+
+.contact {
+    padding: 200px 40px;
+}
+
+.contact p, .contact h2 {
+    color: white;
+}
+
+.contact p {
+    font-size: 2rem;
+    padding: 20px;
+}
+
+.contact p a, .contact p a:visited, .contact p a:active {
+    color: white;
 }
 
 @media screen and (min-width: 320px) {
@@ -746,7 +771,7 @@ footer .copyright {
         line-height: 4rem;
     }
 
-    .value .content {
+    .value .content, .mobileValue .content {
         padding: 40px;
     }
     
@@ -758,9 +783,22 @@ footer .copyright {
     .project .content {
         padding: 50px 5px;
     }
+
+    .formPopup {
+        width: 70vw;
+        height: 70vh;
+        margin-top: -35vh;
+        margin-left: -35vw;
+    }
 }
 
 @media screen and (min-width: 734px) {
+
+    .portrait .content {
+        width: 70%;
+        margin-left: 20px;
+    }
+
     .brand {
         font-size: 2.75rem;
     }
@@ -774,6 +812,7 @@ footer .copyright {
     }
     
     .hero {
+        background-image: url('images/codeBG-M.jpg');
         height: 100vh;
         padding: 250px 0;
     }
@@ -807,6 +846,10 @@ footer .copyright {
     .arrow.prev, .arrow.next {
         display: none;
     }
+
+    .mobileValues {
+        display: none;
+    }
     
     .values {
         display: flex;
@@ -818,9 +861,7 @@ footer .copyright {
     .value {
         display: block;
         position: relative;
-        margin: 0 10px;
-        min-width: 150px;
-        max-width: 350px;
+        min-width: 33%;
         flex: 1 1 auto;
     }
 
@@ -848,6 +889,10 @@ footer .copyright {
         font-size: 1.5rem;
         line-height: 2.25rem;
     } */
+
+    .people, .process, .profit {
+        display: block;
+    }
     
     .project.placeholder {
         display: block;
@@ -861,9 +906,19 @@ footer .copyright {
         font-size: 1rem;
         line-height: 1.1rem;
     }
+
+    .formPopup {
+        width: 55vw;
+        margin-left: -27.5vh;
+    }
 }
 
 @media screen and (min-width: 975px) {
+    .portrait .content {
+        width: 50%;
+        margin-left: 50px;
+    }
+
     .headline .flexSpacer {
         display: block;
     }
@@ -874,10 +929,6 @@ footer .copyright {
     
     .values {
         height: 75vh;
-    }
-    
-    .value {
-        margin: 0 20px;
     }
 
     .value .content {
@@ -898,11 +949,16 @@ footer .copyright {
         font-size: 1.25rem;
         line-height: 1.5rem;
     }
+
+    .formPopup {
+        width: 40vw;
+        margin-left: -20vh;
+    }
 }
 
 @media screen and (min-width: 1285px) {
-    .value {
-        margin: 0 30px;
+    .hero {
+        background-image: url('images/codeBG-L.jpg');
     }
 
     .value .content p {
@@ -919,13 +975,16 @@ footer .copyright {
     .project .content {
         padding: 100px 25px;
     }
+
+    .formPopup {
+        width: 30vw;
+        margin-left: -15vh;
+    }
 }
 
 @media screen and (min-width: 1551px) {
-    .value {
-        margin: 0 50px;
-    }
     
+
     .project {
         min-width: 325px;
         max-width: 450px;
@@ -938,5 +997,9 @@ footer .copyright {
 
     .project .content {
         padding: 125px 25px;
+    }
+
+    .formPopup {
+        margin: -35vh;
     }
 }
