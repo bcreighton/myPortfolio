@@ -1,4 +1,4 @@
- * {
+* {
     box-sizing: border-box;
     text-align: center;
 }
@@ -45,6 +45,10 @@ button {
     cursor: pointer;
 }
 
+a {
+    text-decoration: none;
+}
+
 /* --------------------- COLOR SCHEME ----------------------
 HSL 
 MAIN COLOR / BACKGROUND COLOR FONT
@@ -88,6 +92,10 @@ nav ul {
     font-family: 'Nunito Sans';
     text-transform: uppercase;
     
+}
+
+header a:visited, header a:hover, header a:active {
+    color: rgba(247, 247, 247, 1);
 }
 
 .mobileNavButton {
@@ -175,16 +183,14 @@ nav ul {
     transform: rotate(-45deg);
 }
 
-
-section, footer {
-    margin: 0 auto;
-    padding: 100px 0;
+main {
+    min-height: 100vh;
 }
 
 header {
     position: fixed;
-    background-color: black;
-    color: white;
+    background-color: rgba(12, 4, 6, 1);
+    color: rgba(247, 247, 247, 1);
     width: 100%;
     margin: 0 auto;
     padding: 20px 0;
@@ -193,7 +199,7 @@ header {
 }
 
 .hero {
-    background-color: black;
+    background-color: rgba(12, 4, 6, 1);
     background-image: url('images/codeBG.jpg');
     background-size: cover;
     background-position: center center;
@@ -210,7 +216,7 @@ header {
 .headline h1 {
     font-size: 2.75rem;
     line-height: 3.5rem;
-    color: white;
+    color: rgba(247, 247, 247, 1);
     background-color: rgba(0,0,0,0.1);
     box-shadow: 0 0 20px rgba(0,0,0,0.2);
 }
@@ -223,18 +229,43 @@ header {
 .navItem .cta {
     height: 30px;
     padding: 2px 5px;
-    border: 1px solid white;
+    border: 1px solid rgba(247, 247, 247, 1);
     border-radius: 5px;
     font-size: 1rem;
 }
 
+section, footer {
+    margin: 0 auto;
+    padding: 100px 0;
+}
+
+section.content {
+    background-color: rgba(12, 4, 6, 1);
+    width: 100%;
+    min-height: 80vh;
+    padding: 100px 30px 25px;
+    color: rgba(247, 247, 247, 1);
+}
+
+section.content p {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+section.content p:first-of-type::first-letter {
+    font-size: 2.25rem;
+    font-weight: bold;
+}
+
 .cta {
-    border: 2px solid white;
+    border: 2px solid rgba(247, 247, 247, 1);
     border-radius: 10px;
     background-color: rgb(255, 80, 80);
     height: 50px;
     padding: 10px;
-    color: white;
+    color: rgba(247, 247, 247, 1);
     font-size: 1.25rem;
     font-weight: bold;
 }
@@ -249,7 +280,7 @@ header {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    color: white;
+    color: rgba(247, 247, 247, 1);
 }
 
 .value .content {
@@ -295,7 +326,7 @@ header {
     width: auto;
     margin-top: -22px;
     padding: 16px;
-    color: white;
+    color: rgba(247, 247, 247, 1);
     font-weight: bold;
     font-size: 18px;
     transition: 0.6s ease;
@@ -426,7 +457,7 @@ header {
     margin: 0 15px;
     font-weight: bold;
     text-transform: uppercase;
-    color: white;
+    color: rgba(247, 247, 247, 1);
     text-shadow: 2px 2px 2px rgba(0,0,0,0.25);
 }
 
@@ -437,7 +468,11 @@ header {
 }
 
 footer {
-    padding: 25px 60px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 25px;
+    /* padding: 25px 60px; */
     background-color: rgba(12, 4, 6, 1);
 }
 
@@ -449,6 +484,7 @@ footer .cta {
 
 .social {
     display: inline-block;
+    margin: 20px auto;
 }
 
 .social-buttons {
@@ -478,7 +514,7 @@ footer .cta {
     width: calc(100% - 2px);
     height: calc(100% - 2px);
     border-radius: 100%;
-    background: #fff;
+    background: rgba(247, 247, 247, 1);
     text-align: center;
 }
 .social-button i, .social-button svg {
@@ -505,7 +541,7 @@ footer .cta {
     transition: 0.3s;
 }
 .social-button:focus, .social-button:hover {
-    color: #fff;
+    color: rgba(247, 247, 247, 1);
 }
 .social-button:focus::after, .social-button:hover::after {
     width: 100%;
