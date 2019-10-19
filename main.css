@@ -722,7 +722,7 @@ footer .copyright {
 }
 
 .contact p {
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding: 20px;
 }
 
@@ -916,6 +916,10 @@ footer .copyright {
     .formPopup {
         width: 55vw;
         margin-left: -27.5vh;
+    }
+
+    .contact p {
+        font-size: 1.75rem;
     }
 }
 
