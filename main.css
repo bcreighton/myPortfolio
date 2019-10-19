@@ -96,7 +96,7 @@ nav ul {
     color: rgba(247, 247, 247, 1);
 }
 
-header a:visited, header a:hover, header a:active {
+header a, a:visited, header a:hover, header a:active {
     color: rgba(247, 247, 247, 1);
 }
 
