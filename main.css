@@ -47,6 +47,7 @@ button {
 
 a {
     text-decoration: none;
+    color: rgba(247, 247, 247, 1);
 }
 
 /* --------------------- COLOR SCHEME ----------------------
@@ -73,6 +74,7 @@ OPTIONAL ACCENT
     font-size: 2.25rem;
     float: left;
     margin-left: 20px;
+    color: rgba(247, 247, 247, 1);
 }
 
 nav {
@@ -91,7 +93,7 @@ nav ul {
     font-size: 1rem;
     font-family: 'Nunito Sans';
     text-transform: uppercase;
-    
+    color: rgba(247, 247, 247, 1);
 }
 
 header a:visited, header a:hover, header a:active {
@@ -394,7 +396,7 @@ section.content p:first-of-type::first-letter {
 .project {
     position: relative;
     margin: 10px;
-    min-width: 200px;
+    min-width: 235px;
     max-width: 250px;
     flex: 1 1 auto;
     background-color: rgba(226, 226, 226, 1);
@@ -414,7 +416,11 @@ section.content p:first-of-type::first-letter {
     position: absolute;
     width: 100%;
     height: 100%;
-    padding: 40px 5px;
+    padding: 20px 5px;
+}
+
+.project .content h3 {
+    font-size: 2rem;
 }
 
 .projectTint {
@@ -428,9 +434,9 @@ section.content p:first-of-type::first-letter {
 }
 
 .projectDescription {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    padding: 20px 30px;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    padding: 15px;
 }
 
 .moreText {
@@ -457,15 +463,15 @@ section.content p:first-of-type::first-letter {
 
 .techUsed {
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 }
 
 .projectLinks {
-    padding: 15px 0px;
+    padding: 10px 0px;
 }
 
 .projectLinks a {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     margin: 0 15px;
     font-weight: bold;
     text-transform: uppercase;
@@ -781,7 +787,7 @@ footer .copyright {
     }
 
     .project .content {
-        padding: 50px 5px;
+        padding: 20px 5px;
     }
 
     .formPopup {
