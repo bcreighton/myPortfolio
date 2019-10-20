@@ -208,8 +208,8 @@ function generateProjects(projects) {
                     <p class = 'projectDescription'>${projects[i]['description']}</p>
                     <p class = 'techUsed'>${projects[i]['tech']}</p>
                         <div class = 'projectLinks'>
-                            <a class = 'live' href='${projects[i]["link"]}'>Live</a>
-                            <a class = 'repo' href='${projects[i]["repo"]}'>Repo</a>
+                            <a class = 'live' target='_blank' href='${projects[i]["link"]}'>Live</a>
+                            <a class = 'repo' target='_blank' href='${projects[i]["repo"]}'>Repo</a>
                         </div>
                     </div>
                 </div>
