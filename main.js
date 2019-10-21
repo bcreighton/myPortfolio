@@ -228,8 +228,8 @@ function handleProjectHover() {
 
         if(e.type == 'mouseover') {
             projTitle = $(this).find('.projectTitle').text();
-            /* $(this).find('.projectTint').css('display', 'block');
-            $(this).find('.content').css('display', 'block'); */
+            $(this).find('.projectTint').css('display', 'block');
+            $(this).find('.content').css('display', 'block');
             bgColor = $.grep(projects, function(proj){
                     return proj.title === projTitle;
                     })
@@ -244,8 +244,8 @@ function handleProjectHover() {
             $('main .bgContainer').css('background-color', bgColor);
         } else if(e.type == 'mouseout') {
             $(this).css('background-image','none');
-            /* $(this).find('.projectTint').css('display', 'none');
-            $(this).find('.content').css('display', 'none'); */
+            $(this).find('.projectTint').css('display', 'none');
+            $(this).find('.content').css('display', 'none');
             $(this).css('background-color', 'rgba(215, 201, 170, 1)');
             $('.project').css('background-color', 'rgba(226, 226, 226, 1)');
             $('main .bgContainer').css('background-color', 'rgba(247, 247, 247, 1)');
