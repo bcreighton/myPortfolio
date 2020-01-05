@@ -1,6 +1,6 @@
 # Bryson Creighton Portfolio
 
-![Bryson Creighton portfolio home page](images\portfolioSS.png)
+![Bryson Creighton portfolio home page](images/portfolioSS.png)
 
 > Designer by Heart; Fullstack Developer by Choice!
 
