@@ -228,6 +228,10 @@ header {
   display: none;
 }
 
+.headline {
+  padding: 40px 20px;
+}
+
 .headline h1 {
   font-size: 2.75rem;
   line-height: 3.5rem;
