@@ -199,7 +199,13 @@ main {
 }
 
 .bgContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 400px 1fr .25fr;
   background-color: rgba(247, 247, 247, 1);
+  -webkit-transition: background-color 300ms linear;
+  -ms-transition: background-color 300ms linear;
+  transition: background-color 300ms linear;
 }
 
 header {
@@ -214,6 +220,8 @@ header {
 }
 
 .hero {
+  grid-column: 1/2;
+  grid-row: 1/2;
   background-color: rgba(12, 4, 6, 1);
   background-image: url('images/codeBG-S.jpg');
   background-size: cover;
@@ -222,6 +230,13 @@ header {
   /* background-attachment: fixed; */
   padding: 150px 0;
   height: 100vh;
+}
+
+.portrait {
+  background-image: url('/images/Solo.png');
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size:300px;
 }
 
 .flexSpacer {
@@ -255,6 +270,7 @@ header {
 
 section,
 footer {
+  width: 100%;
   margin: 0 auto;
   padding: 100px 0;
 }
@@ -293,6 +309,8 @@ section.content p:first-of-type::first-letter {
 
 .values,
 .mobileValues {
+  grid-column: 1/2;
+  grid-row: 2/3;
   position: relative;
   padding: 0;
 }
@@ -411,8 +429,10 @@ section.content p:first-of-type::first-letter {
 }
 
 .projects {
+  grid-column: 1/2;
+  grid-row: 3/4;
   width: 100%;
-  padding: 0;
+  padding: 50px 0;
 }
 
 .projectContainer {
@@ -519,6 +539,8 @@ section.content p:first-of-type::first-letter {
 }
 
 footer {
+  grid-column: 1/2;
+  grid-row: 4/5;
   position: relative;
   bottom: 0;
   width: 100%;
@@ -778,9 +800,16 @@ footer .copyright {
   .articles {
     height: 50vh;
   }
+
+  .techUsed {
+    font-size: .8rem;
+  }
 }
 
 @media screen and (min-width: 565px) {
+  .hero {
+    height: 50vh;
+  }
   .brand {
     font-size: 2.5rem;
   }
@@ -838,9 +867,24 @@ footer .copyright {
     margin-top: -35vh;
     margin-left: -35vw;
   }
+
+  .project .content h3 {
+    font-size: 1.5rem;
+  }
+
+  .projectDescription {
+    font-size: 1.1rem;
+  }
+
+ 
 }
 
 @media screen and (min-width: 734px) {
+
+  .bgContainer {
+    grid-template-rows: auto 550px 1fr .25fr;
+  }
+
   .portrait .content {
     width: 70%;
     margin-left: 20px;
@@ -901,10 +945,12 @@ footer .copyright {
   }
 
   .values {
-    display: flex;
-    flex-direction: row;
+    display: grid;
     justify-content: center;
-    height: 75vh;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-column: 1/2;
+    grid-row: 2/3;
   }
 
   .value {
@@ -937,13 +983,13 @@ footer .copyright {
   /* .content p {
         font-size: 1.5rem;
         line-height: 2.25rem;
-    } */
+    }
 
   .people,
   .process,
   .profit {
     display: block;
-  }
+  } */
 
   .project.placeholder {
     display: block;
@@ -982,8 +1028,64 @@ footer .copyright {
     line-height: 4.75rem;
   }
 
-  .values {
+  /* .values {
     height: 75vh;
+  } */
+
+  /* .arrow.prev,
+  .arrow.next {
+    display: none;
+  }
+
+  .mobileValues {
+    display: none;
+  }
+
+  .values {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: minmax(400px, 600px);
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  .value {
+    display: block;
+    position: relative;
+    min-width: 33%;
+    flex: 1 1 auto;
+  }
+
+  .value:after {
+    content: '';
+    display: block;
+    padding-bottom: 150%;
+  }
+
+  .value .content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 30px 15px;
+    color: white;
+  }
+
+  .content h2 {
+    padding: 10px 0;
+    margin-bottom: 30px;
+    color: white;
+  }
+
+  /* .content p {
+        font-size: 1.5rem;
+        line-height: 2.25rem;
+    } */ 
+
+  .people,
+  .process,
+  .profit {
+    display: block;
   }
 
   .value .content {
@@ -1011,9 +1113,13 @@ footer .copyright {
   }
 }
 
-@media screen and (min-width: 1285px) {
+@media screen and (min-width: 1200px) {
   .hero {
     background-image: url('images/codeBG-L.jpg');
+  }
+
+  .values {
+    grid-template-rows: 525px;
   }
 
   .value .content p {

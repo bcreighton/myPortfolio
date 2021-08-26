@@ -10,8 +10,8 @@ const projects = [
     tech: 'HTML, CSS, JQuery',
     link: 'https://bcreighton.github.io/sportsTriviaGame/',
     repo: 'https://github.com/bcreighton/sportsTriviaGame',
-    hoverColor: 'rgba(250, 167, 111, 0.5)',
-    textColor: 'black'
+    hoverColor: 'rgba(255, 125, 52, 0.75)',
+    textColor: 'white'
   },
   {
     id: 'CUID',
@@ -22,56 +22,32 @@ const projects = [
     tech: 'HTML, CSS, Javascript, JQuery',
     link: 'https://bcreighton.github.io/nbaSphere/',
     repo: 'https://github.com/bcreighton/nbaSphere',
-    hoverColor: 'rgba(23, 64, 139, 0.8)',
+    hoverColor: 'rgba(23, 64, 139, 0.75)',
     textColor: 'white'
   },
   {
     id: 'CUID',
-    title: 'Project 3',
-    image: '',
+    title: '2/47 Recruit',
+    image: '/images/247REcruit.png',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit.<span class="dots">...</span><button class="readMore">READ MORE</button><span class="moreText"> iaculis erat. Phasellus id ante sem. Sed dui metus, vulputate at tempor a, luctus in elit. Sed pulvinar dolor a nulla sodales, eu malesuada nisi malesuada.</span><button class="readLess">READ LESS</button>',
-    tech: 'HTML, CSS, JQuery',
-    link: 'http',
-    repo: 'http',
-    hoverColor: 'rgba(92, 255, 214, 0.5)',
-    textColor: 'black'
+      'Targeted Real Estate Agent recruiting simplified!<span class="dots">...</span><button class="readMore">READ MORE</button><span class="moreText"> This pilot application is a the foundation of a larger vision behind the requirements of effective recruting in the Real Estate Brokerage business.</span><button class="readLess">READ LESS</button>',
+    tech: 'React, Node, Express, PostgreSQL',
+    link: 'https://247recruit-app.vercel.app/',
+    repo: 'https://github.com/bcreighton/247recruit-app',
+    hoverColor: 'rgba(177, 117, 255, 0.75)',
+    textColor: 'white'
   },
   {
     id: 'CUID',
-    title: 'Project 4',
-    image: '',
+    title: 'EMOLINGS',
+    image: '/images/emolings.png',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit.<span class="dots">...</span><button class="readMore">READ MORE</button><span class="moreText"> iaculis erat. Phasellus id ante sem. Sed dui metus, vulputate at tempor a, luctus in elit. Sed pulvinar dolor a nulla sodales, eu malesuada nisi malesuada.</span><button class="readLess">READ LESS</button>',
-    tech: 'HTML, CSS, JQuery',
-    link: 'http',
-    repo: 'http',
-    hoverColor: 'rgba(177, 117, 255, 0.5)',
-    textColor: 'black'
-  },
-  {
-    id: 'CUID',
-    title: 'Project 5',
-    image: '',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit.<span class="dots">...</span><button class="readMore">READ MORE</button><span class="moreText"> iaculis erat. Phasellus id ante sem. Sed dui metus, vulputate at tempor a, luctus in elit. Sed pulvinar dolor a nulla sodales, eu malesuada nisi malesuada.</span><button class="readLess">READ LESS</button>',
-    tech: 'HTML, CSS, JQuery',
-    link: 'http',
-    repo: 'http',
-    hoverColor: 'rgba(255, 192, 203, 0.5)',
-    textColor: 'black'
-  },
-  {
-    id: 'CUID',
-    title: 'Project 6',
-    image: '',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit.<span class="dots">...</span><button class="readMore">READ MORE</button><span class="moreText"> iaculis erat. Phasellus id ante sem. Sed dui metus, vulputate at tempor a, luctus in elit. Sed pulvinar dolor a nulla sodales, eu malesuada nisi malesuada.</span><button class="readLess">READ LESS</button>',
-    tech: 'HTML, CSS, JQuery',
-    link: 'http',
-    repo: 'http',
-    hoverColor: 'rgba(93, 144, 255, 0.5)',
-    textColor: 'black'
+      'The modern age version of a feelings chart for Parents/Caregivers<span class="dots">...</span><button class="readMore">READ MORE</button><span class="moreText">  to create better conversations with children about the feelings and emotions they experience on a daily basis.</span><button class="readLess">READ LESS</button>',
+    tech: 'React, Node, Express, PostgreSQL',
+    link: 'https://emolings-app.vercel.app/',
+    repo: 'https://github.com/bcreighton/emolings-app',
+    hoverColor: 'rgba(242, 73, 73, 0.75)',
+    textColor: 'white'
   }
 ];
 
