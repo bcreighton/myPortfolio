@@ -31,7 +31,7 @@ This is a display of my (Bryson Creighton) personal projects, a little about me 
 
 ## How To Use
 
-[Visit My Portfolio](https://bcreighton.github.io/myPortfolio/)
+[Visit My Portfolio](https://bryson-creighton.vercel.app/)
 
 [Portfolio Repo](https://github.com/bcreighton/myPortfolio)
 
