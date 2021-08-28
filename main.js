@@ -5,8 +5,10 @@ const projects = [
     id: 'CUID',
     title: 'Sports Quiz',
     image: 'images/sportsQuiz.jpg',
-    description:
-      'The Sports Trivia Game is an application that tests your sports knowledge<span class="dots">...</span><button class="readMore">READ MORE</button><span class="moreText"> with random sports questions from different types of sports. Are you one of the GOATs or is your sports knowledge mediocre?</span><button class="readLess">READ LESS</button>',
+    description: 
+      'This game was built for sports enthusiast; as it challenges your knowledge of sports icons and events. It was inspired by my love for sports and testing the historical knowledge of my friends.',
+    hoverDescription:
+      'This Sports Trivia Game is an application that tests your sports knowledge<span class="dots">...</span><button class="readMore">READ MORE</button><span class="moreText"> with random sports questions from different types of sports. Are you one of the GOATs or is your sports knowledge mediocre?</span><button class="readLess">READ LESS</button>',
     tech: 'HTML, CSS, JQuery',
     link: 'https://bcreighton.github.io/sportsTriviaGame/',
     repo: 'https://github.com/bcreighton/sportsTriviaGame',
@@ -18,6 +20,8 @@ const projects = [
     title: 'NBA Sphere',
     image: 'images/nbaSphere.jpg',
     description:
+      'I have a passion for fantasy sports, I built an NBA news portal for fantasy basketball players to keep up with player and team news.',
+    hoverDescription:
       'NBA Sphere is a one stop shop for NBA news and details<span class="dots">...</span><button class="readMore">READ MORE</button><span class="moreText"> for all players, teams, conferences and divisions around the NBA.</span><button class="readLess">READ LESS</button>',
     tech: 'HTML, CSS, Javascript, JQuery',
     link: 'https://bcreighton.github.io/nbaSphere/',
@@ -30,7 +34,9 @@ const projects = [
     title: '2/47 Recruit',
     image: '/images/247REcruit.png',
     description:
-      'Targeted Real Estate Agent recruiting simplified!<span class="dots">...</span><button class="readMore">READ MORE</button><span class="moreText"> This pilot application is a the foundation of a larger vision behind the requirements of effective recruting in the Real Estate Brokerage business.</span><button class="readLess">READ LESS</button>',
+      'I operate in real estate and an issue I see every day is recruiting; so I built this as a pilot to help brokers recruit agents.',
+    hoverDescription:
+      'Targeted Real Estate Agent recruiting simplified!<span class="dots">...</span><button class="readMore">READ MORE</button><span class="moreText"> This pilot application is a the foundation of a larger vision behind the requirements of effective recruiting in the Real Estate Brokerage business.</span><button class="readLess">READ LESS</button>',
     tech: 'React, Node, Express, PostgreSQL',
     link: 'https://247recruit-app.vercel.app/',
     repo: 'https://github.com/bcreighton/247recruit-app',
@@ -42,6 +48,8 @@ const projects = [
     title: 'EMOLINGS',
     image: '/images/emolings.png',
     description:
+      'My wife and I love communicating with our kids in a meaningful way; but do not see that in many parents. So I built this app to assist parents in creating better conversations with their children.',
+    hoverDescription:
       'The modern age version of a feelings chart for Parents/Caregivers<span class="dots">...</span><button class="readMore">READ MORE</button><span class="moreText">  to create better conversations with children about the feelings and emotions they experience on a daily basis.</span><button class="readLess">READ LESS</button>',
     tech: 'React, Node, Express, PostgreSQL',
     link: 'https://emolings-app.vercel.app/',
@@ -195,10 +203,14 @@ function generateProjects(projects) {
   for (let i = 0; i < projects.length; i++) {
     $('.projectContainer').append(`
             <div class="project">
+              <div class='projectPrelim'>
+                <h3 class='title'>${projects[i]['title']} </h3>
+                <p class = 'description'>${projects[i]['description']}</p>
+              </div>
                 <div class="projectTint">
                     <div class='content'>
                     <h3 class = 'projectTitle'>${projects[i]['title']}</h3>
-                    <p class = 'projectDescription'>${projects[i]['description']}</p>
+                    <p class = 'projectDescription'>${projects[i]['hoverDescription']}</p>
                     <p class = 'techUsed'>${projects[i]['tech']}</p>
                         <div class = 'projectLinks'>
                             <a class = 'live' href='${projects[i]['link']}'>Live</a>
@@ -206,7 +218,7 @@ function generateProjects(projects) {
                         </div>
                     </div>
                 </div>
-            </div>
+            </h3>
             `);
   }
 }
@@ -225,6 +237,9 @@ function handleProjectHover() {
       projTitle = $(this)
         .find('.projectTitle')
         .text();
+      $(this)
+        .find('.projectPrelim')
+        .css('display', 'none');
       $(this)
         .find('.projectTint')
         .css('display', 'block');
@@ -258,6 +273,9 @@ function handleProjectHover() {
       $(this)
         .find('.content')
         .css('display', 'none');
+      $(this)
+        .find('.projectPrelim')
+        .css('display', 'block');
       $(this).css('background-color', 'rgba(215, 201, 170, 1)');
       $('.project').css('background-color', 'rgba(226, 226, 226, 1)');
       $('main .bgContainer').css('background-color', 'rgba(247, 247, 247, 1)');
