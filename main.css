@@ -236,7 +236,7 @@ header {
   background-image: url('/images/Solo.png');
   background-repeat: no-repeat;
   background-position: bottom right;
-  background-size:300px;
+  background-size: 250px;
 }
 
 .flexSpacer {
@@ -1115,7 +1115,7 @@ footer .copyright {
     max-width: 400px;
     margin: 15px;
   }
-  
+
   .projectPrelim {
     padding: 100px 5px;
   }
